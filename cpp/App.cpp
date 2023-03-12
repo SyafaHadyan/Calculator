@@ -27,10 +27,6 @@ cin >> second_number;
 if (op == '/' && second_number == 0) {
     Divide_By_Zero();
 }
-else if (op != '+' || op != '-' || op != '*' || op!= '/') {
-    cout << "Invalid or unsupported operator"<< endl;
-    cout << "Supported operator :" + " " + supported_Char;
-}
 
 if (op == '+') {
         double result = first_number + second_number;
@@ -47,6 +43,10 @@ if (op == '+') {
     else if (op == '/') {
         double result = first_number / second_number;
         cout << result << endl;
+    }
+    else if (op != '+' || op != '-' || op != '*' || op!= '/') {
+    cout << "Invalid or unsupported operator"<< endl;
+    cout << "Supported operator:" << " " << supported_Char << endl;
     }
 
     return 0;
