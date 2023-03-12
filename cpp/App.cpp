@@ -10,7 +10,14 @@ double first_number;
 char op;
 double second_number;
 
-cin >> first_number >> op >> second_number;
+cout << "Enter Number:";
+cin >> first_number;
+
+cout << "Enter OP:";
+cin >> op;
+
+cout << "Enter Number:";
+cin >> second_number;
 
  if (op == '+') {
         double result = first_number + second_number;
