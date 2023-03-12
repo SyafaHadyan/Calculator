@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 #include <string>
-#include "GUI.cpp"
 
 using namespace std;
 
@@ -28,9 +27,6 @@ cin >> first_number >> op >> second_number;
     else if (op == '/') {
         double result = first_number / second_number;
         cout << result << endl;
-    }
-    else {
-        cout << "Unsupported Character." << endl;
     }
 
     return 0;
