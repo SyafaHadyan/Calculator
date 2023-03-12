@@ -1,66 +1,65 @@
-#include <gtk/gtk.h>
+#include <nitisa/nitisa.h>
+#include <Nitisa/Button.h>
+#include <Nitisa/Window.h>
+#include <Nitisa-14.0.0/nitisa/nitisa.h>
 
-class Calculator {
-public:
-    Calculator() {
-        // Create the main window
-        window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-        gtk_window_set_title(GTK_WINDOW(window), "Calculator");
-        gtk_container_set_border_width(GTK_CONTAINER(window), 10);
-        g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+using namespace Nitisa;
 
-        // Create the input entry
-        input = gtk_entry_new();
-        gtk_entry_set_width_chars(GTK_ENTRY(input), 20);
-        gtk_entry_set_alignment(GTK_ENTRY(input), 1.0);
-        gtk_container_add(GTK_CONTAINER(window), input);
-
-        // Create the compute button
-        computeButton = gtk_button_new_with_label("Compute");
-        g_signal_connect(computeButton, "clicked", G_CALLBACK(compute), this);
-        gtk_container_add(GTK_CONTAINER(window), computeButton);
-
-        // Create the result label
-        resultLabel = gtk_label_new("Result");
-        gtk_label_set_width_chars(GTK_LABEL(resultLabel), 20);
-        gtk_label_set_alignment(GTK_LABEL(resultLabel), 1.0);
-        gtk_container_add(GTK_CONTAINER(window), resultLabel);
-
-        // Show all components
-        gtk_widget_show_all(window);
-    }
-
-    static void compute(GtkWidget* widget, gpointer data) {
-        // Get the input value
-        Calculator* calculator = static_cast<Calculator*>(data);
-        const gchar* inputText = gtk_entry_get_text(GTK_ENTRY(calculator->input));
-        double value = atof(inputText);
-
-        // Compute the result
-        double result = value * value;
-
-        // Set the result label
-        gchar* resultText = g_strdup_printf("%g", result);
-        gtk_label_set_text(GTK_LABEL(calculator->resultLabel), resultText);
-        g_free(resultText);
-    }
-
+class CalculatorWindow : public Window
+{
 private:
-    GtkWidget* window;
-    GtkWidget* input;
-    GtkWidget* computeButton;
-    GtkWidget* resultLabel;
+    TextField* input;
+    Button* computeButton;
+    Label* resultLabel;
+
+public:
+    CalculatorWindow()
+    {
+        // Set up the main window
+        setTitle("Calculator");
+        setSize(300, 150);
+        setResizable(false);
+
+        // Set up the input text field
+        input = new TextField();
+        input->setBounds(50, 20, 200, 30);
+        addComponent(input);
+
+        // Set up the compute button
+        computeButton = new Button("Compute");
+        computeButton->setBounds(100, 60, 100, 30);
+        computeButton->setOnClick([&]() {
+            // Get the input value
+            double value = std::stod(input->getText().toStdString());
+
+            // Compute the result
+            double result = value * value;
+
+            // Display the result
+            resultLabel->setText(std::to_string(result));
+        });
+        addComponent(computeButton);
+
+        // Set up the result label
+        resultLabel = new Label("Result");
+        resultLabel->setBounds(50, 100, 200, 30);
+        addComponent(resultLabel);
+    }
 };
 
-int main(int argc, char* argv[]) {
-    // Initialize GTK library
-    gtk_init(&argc, &argv);
+int main(int argc, char** argv)
+{
+    // Initialize the Nitisa framework
+    Nitisa::init(argc, argv);
 
-    // Create the calculator GUI
-    Calculator calculator;
+    // Create a new window
+    CalculatorWindow window;
 
-    // Run the main loop
-    gtk_main();
+    // Run the event loop
+    Nitisa::run();
+
+    // Clean up the Nitisa framework
+    Nitisa::cleanup();
 
     return 0;
 }
