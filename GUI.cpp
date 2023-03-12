@@ -1,6 +1,7 @@
 #include <nitisa/nitisa.h>
 #include <Nitisa/Button.h>
 #include <Nitisa/Window.h>
+#include <Nitisa-14.0.0/nitisa/nitisa.h>
 
 using namespace Nitisa;
 
