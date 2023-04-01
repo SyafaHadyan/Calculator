@@ -27,7 +27,7 @@ Getting Started
 
 3. Run the executable file in your command-line interface. For example:
 
-`./myprogram`
+    `./myprogram`
 
 This command will run the executable file named myprogram.
 
