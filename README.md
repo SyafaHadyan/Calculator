@@ -59,10 +59,6 @@ The calculator program supports the following arithmetic operations:
 - Multiplication (*)
 - Division (/)
 
-## Error Handling
-
-If the user enters an invalid operation, the program will output an error message and prompt the user to try again with a valid operation. If the user enters a second number of 0 when performing division, the program will output an error message and prompt the user to try again with a non-zero second number.
-
 ## Conclusion
 
 This calculator program is a simple tool for performing basic arithmetic operations on two numbers. With its easy-to-use interface and error handling, it is a useful tool for anyone in need of quick calculations.
