@@ -4,50 +4,110 @@
 
 using namespace std;
 
-void Divide_By_Zero() {
-    cout << "Can't divide by zero";
+void calculator()
+{
+    string supported_op = "+, -, *, /";
+    double first_number;
+    char op;
+    double second_number;
+    double result;
+
+    cout << "Enter first number:" << " ";
+    cin >> first_number;
+    cout << "Enter operator:" << " ";
+    cin >> op;
+    cout << "Enter second number:" << " ";
+    cin >> second_number;
+    if (op == '+' || op == '-' || op == '*' || op == '/')
+    {
+        if (op == '/')
+        {
+            if (second_number == 0)
+            {
+                cout << "Can't divide by zero" << endl;
+                return;
+            }
+            else
+            {
+                result = first_number / second_number;
+            }
+        }
+        else if (op == '+')
+        {
+            result = first_number + second_number;
+        }
+        else if (op == '-')
+        {
+            result = first_number - second_number;
+        }
+        else if (op == '*')
+        {
+            result = first_number * second_number;
+        }
+    }
+    else
+    {
+        cout << "Invalid or unsupported operator" << endl;
+        cout << "Supported operator:" << " " << supported_op << endl;
+        return;
+    }
+
+    cout << result << endl;
 }
 
-int main() {
+int main()
+{
 
-string supported_Char = "+, -, *, /";
-double first_number;
-char op;
-double second_number;
+    cout << "Welcome to CLI calculator" << endl;
+    cout << "Supported operators: +, -, *, /" << endl;
 
-cout << "Enter Number:";
-cin >> first_number;
+    string supported_op = "+, -, *, /";
+    double first_number;
+    char op;
+    double second_number;
+    double result;
 
-cout << "Enter OP:";
-cin >> op;
-
-cout << "Enter Number:";
-cin >> second_number;
-
-if (op == '/' && second_number == 0) {
-    Divide_By_Zero();
-}
-
-if (op == '+') {
-        double result = first_number + second_number;
-        cout << result << endl;
+    cout << "Enter first number:" << " ";
+    cin >> first_number;
+    cout << "Enter operator:" << " ";
+    cin >> op;
+    cout << "Enter second number:" << " ";
+    cin >> second_number;
+    if (op == '+' || op == '-' || op == '*' || op == '/')
+    {
+        if (op == '/')
+        {
+            if (second_number == 0)
+            {
+                cout << "Can't divide by zero" << endl;
+            }
+            else
+            {
+                result = first_number / second_number;
+            }
+        }
+        else if (op == '+')
+        {
+            result = first_number + second_number;
+        }
+        else if (op == '-')
+        {
+            result = first_number - second_number;
+        }
+        else if (op == '*')
+        {
+            result = first_number * second_number;
+        }
     }
-    else if (op == '-') {
-        double result = first_number - second_number;
-        cout << result << endl;
+    else
+    {
+        cout << "Invalid or unsupported operator" << endl;
+        cout << "Supported operator:" << " " << supported_op << endl;
     }
-    else if (op == '*') {
-        double result = first_number * second_number;
-        cout << result << endl;
-    }
-    else if (op == '/') {
-        double result = first_number / second_number;
-        cout << result << endl;
-    }
-    else if (op != '+' || op != '-' || op != '*' || op!= '/') {
-    cout << "Invalid or unsupported operator"<< endl;
-    cout << "Supported operator:" << " " << supported_Char << endl;
-    }
+
+    cout << result << endl;
+
+    calculator();
 
     return 0;
 }
