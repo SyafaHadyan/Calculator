@@ -42,8 +42,10 @@ void calculator()
     }
     else
     {
+        cout << "\n" << endl;
         cout << "Invalid or unsupported operator" << endl;
         cout << "Supported operator:" << " " << supported_op << endl;
+        cout << "\n" << endl;
     }
 
 }
@@ -53,6 +55,7 @@ int main()
 
     cout << "Welcome to CLI calculator" << endl;
     cout << "Supported operators: +, -, *, /" << endl;
+    cout << "\n" << endl;
 
     string supported_op = "+, -, *, /";
     double first_number;
@@ -90,8 +93,10 @@ int main()
     }
     else
     {
+        cout << "\n" << endl;
         cout << "Invalid or unsupported operator" << endl;
         cout << "Supported operator:" << " " << supported_op << endl;
+        cout << "\n" << endl;
     }
 
     while (true)
