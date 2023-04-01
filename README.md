@@ -5,9 +5,31 @@ Getting Started
 
 ## To use the calculator program, simply follow these steps:
 
+### Compiling the C++ program manually
+
 1. Open the program in your preferred C++ IDE or text editor.
-2. Compile the program to create an executable file.
-3. Run the executable file in your command-line interface.
+
+2. Navigate to the directory where your program is saved using the command line.
+
+3. Use the appropriate C++ compiler command to compile the program into an executable file. For example:
+
+    `g++ myprogram.cpp -o myprogram`
+
+4. This command will compile the myprogram.cpp file and generate an executable file named myprogram.
+
+5. Run the executable file in your command-line interface.
+
+### Using the precompiled executable file
+
+1. Download the precompiled executable file from the release.
+    
+2. Navigate to the directory where the executable file is saved using the command line.
+
+3. Run the executable file in your command-line interface. For example:
+
+`./myprogram`
+
+This command will run the executable file named myprogram.
 
 ## Usage
 
@@ -24,7 +46,7 @@ Here's an example of how to use the calculator program:
 Enter Number: 10
 Enter OP: +
 Enter Number: 5
-15
+result: 15
 ```
 
 In this example, the user enters the first number as 10, the operation as addition (+), and the second number as 5. The program then calculates the sum of the two numbers (10 + 5) and outputs the result as 15.
@@ -32,10 +54,10 @@ Supported Operations
 
 The calculator program supports the following arithmetic operations:
 
-1. Addition (+)
-2. Subtraction (-)
-3. Multiplication (*)
-4. Division (/)
+- Addition (+)
+- Subtraction (-)
+- Multiplication (*)
+- Division (/)
 
 ## Error Handling
 
