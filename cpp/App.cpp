@@ -18,21 +18,10 @@ void calculator()
     cin >> op;
     cout << "Enter second number:" << " ";
     cin >> second_number;
+
     if (op == '+' || op == '-' || op == '*' || op == '/')
     {
-        if (op == '/')
-        {
-            if (second_number == 0)
-            {
-                cout << "Can't divide by zero" << endl;
-                return;
-            }
-            else
-            {
-                result = first_number / second_number;
-            }
-        }
-        else if (op == '+')
+        if (op == '+')
         {
             result = first_number + second_number;
         }
@@ -44,15 +33,19 @@ void calculator()
         {
             result = first_number * second_number;
         }
+        else if (op == '/')
+        {
+            result = first_number / second_number;
+        }
+
+        cout << "\n" << "result:" << " " << result << "\n" << endl;
     }
     else
     {
         cout << "Invalid or unsupported operator" << endl;
         cout << "Supported operator:" << " " << supported_op << endl;
-        return;
     }
 
-    cout << result << endl;
 }
 
 int main()
@@ -73,20 +66,10 @@ int main()
     cin >> op;
     cout << "Enter second number:" << " ";
     cin >> second_number;
+
     if (op == '+' || op == '-' || op == '*' || op == '/')
     {
-        if (op == '/')
-        {
-            if (second_number == 0)
-            {
-                cout << "Can't divide by zero" << endl;
-            }
-            else
-            {
-                result = first_number / second_number;
-            }
-        }
-        else if (op == '+')
+        if (op == '+')
         {
             result = first_number + second_number;
         }
@@ -98,6 +81,12 @@ int main()
         {
             result = first_number * second_number;
         }
+        else if (op == '/')
+        {
+            result = first_number / second_number;
+        }
+
+        cout << "\n" << "result:" << " " << result << "\n" << endl;
     }
     else
     {
@@ -105,9 +94,9 @@ int main()
         cout << "Supported operator:" << " " << supported_op << endl;
     }
 
-    cout << result << endl;
-
-    calculator();
-
+    while (true)
+    {
+        calculator();
+    }
     return 0;
 }
