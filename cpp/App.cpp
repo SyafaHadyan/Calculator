@@ -4,12 +4,8 @@
 
 using namespace std;
 
-int main()
+void calc()
 {
-
-    cout << "Welcome to CLI calculator" << endl;
-    cout << "Supported operators: +, -, *, /" << "\n" << endl;
-
     string supported_op = "+, -, *, /";
     double first_number;
     char op;
@@ -50,6 +46,20 @@ int main()
         cout << "Supported operator:" << " " << supported_op << "\n" << endl;
     }
 
+}
+
+int main()
+{
+
+    cout << "Welcome to CLI calculator" << endl;
+    cout << "Supported operators: +, -, *, /" << "\n" << endl;
+
+    calc();
+
+    while (true)
+    {
+        calc();
+    }
 
     return 0;
 }
